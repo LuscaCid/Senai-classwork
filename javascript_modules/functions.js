@@ -36,9 +36,14 @@ export function JSfunctions({
         setInterval(()=>{
             let uptade = new Date()
         
-            displayHours.innerText = uptade.getHours()
-            displayMinutes.innerText= uptade.getMinutes()
-            displaySeconds.innerText = uptade.getSeconds()
+            if(uptade.getHours() < 10)displayHours.innerText = `0${uptade.getHours()}`     
+            else displayHours.innerText = uptade.getHours()
+            
+            if(uptade.getMinutes() < 10)displayMinutes.innerText = `0${uptade.getMinutes()}`
+            else displayMinutes.innerText= uptade.getMinutes()
+            
+            if(uptade.getSeconds() < 10) displaySeconds.innerText = `0${uptade.getSeconds()}`
+            else displaySeconds.innerText = uptade.getSeconds()
             
             console.log
         }, 1000)
